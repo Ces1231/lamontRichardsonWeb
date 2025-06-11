@@ -1,19 +1,827 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genesee County Mobile Notary Services</title>
+  <meta name="description" content="Professional mobile notary and fingerprinting services in Genesee County and surrounding areas.">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blue: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#1e3a8a'
+            },
+            green: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              600: '#16a34a',
+              700: '#15803d'
+            },
+            yellow: {
+              50: '#fefce8',
+              600: '#ca8a04'
+            },
+            purple: {
+              100: '#f3e8ff',
+              600: '#9333ea'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Additional custom styles */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .shadow-card {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .transition-all {
+      transition: all 0.3s ease;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .logo-image {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+    
+    .notary-image {
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .image-overlay {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.5rem;
+    }
+    
+    .image-overlay::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(37, 99, 235, 0.1), rgba(16, 163, 74, 0.1));
+      pointer-events: none;
+    }
+    
+    @media (min-width: 640px) {
+      .logo-image {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  </style>
 </head>
-<body>
-  <div class="container">
-    <img src="Logo.webp" alt="Logo" class="logo" />
-    <h1>🚧 Coming Soon 🚧</h1>
-    <div class="construction-line"></div>
-    <p class="business-name">Genesee County Mobile Notary Services</p>
-    <p class="contact-info">📞 810-255-1634</p>
-    <div class="construction-line"></div>
-  </div>
+<body class="min-h-screen bg-white">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-4 px-4 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <div class="logo-container">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo-Bm0CnMUkJghxxA8iuMGrWXPWAOSuPw.webp" alt="Genesee County Mobile Notary Logo" class="logo-image">
+        <div>
+          <h1 class="text-xl font-bold">Genesee County Mobile Notary</h1>
+          <p class="text-blue-200 text-sm">Professional • Reliable • Convenient</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:810-255-1634" class="flex items-center gap-2 hover:text-blue-200">
+          <i class="fas fa-phone h-4 w-4"></i>
+          <span class="hidden sm:inline">(810) 255-1634</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-50 to-blue-100 py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <!-- Logo in Hero Section -->
+          <div class="flex justify-center lg:justify-start mb-8">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo-Bm0CnMUkJghxxA8iuMGrWXPWAOSuPw.webp" alt="Genesee County Mobile Notary Logo" class="w-24 h-24 sm:w-32 sm:h-32 object-contain">
+          </div>
+          
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Welcome to Professional Mobile Notary Services
+          </h2>
+          <p class="text-xl text-gray-700 mb-4">
+            Serving Genesee County and surrounding cities with certified mobile notary services
+          </p>
+          <p class="text-lg text-blue-700 font-semibold mb-8">Last minute and emergency notarizations available!</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-3 rounded-md font-medium">
+              Book Appointment Now
+            </a>
+            <a href="tel:810-255-1634" class="border border-gray-300 text-gray-700 hover:bg-gray-50 text-lg px-8 py-3 rounded-md font-medium">
+              Call (810) 255-1634
+            </a>
+          </div>
+        </div>
+        
+        <!-- Hero Image -->
+        <div class="image-overlay">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+               alt="Professional document signing and notarization" 
+               class="w-full h-80 lg:h-96 object-cover notary-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="border-2 rounded-lg hover:shadow-lg transition-shadow p-6">
+          <div class="text-center mb-6">
+            <div class="image-overlay mb-4">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                   alt="Notary stamp and documents" 
+                   class="w-full h-48 object-cover notary-image">
+            </div>
+            <i class="fas fa-file-signature text-blue-600 text-3xl mb-4"></i>
+            <h3 class="text-2xl font-bold">Mobile Notary Services</h3>
+            <p class="text-gray-500 text-lg">Professional Notary Services</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-blue-600 mb-4">$75.00</div>
+            <p class="text-gray-600 mb-4">1 hour service • Anywhere in Genesee County</p>
+            <a href="#contact" class="block w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md font-medium">
+              BOOK NOW
+            </a>
+          </div>
+        </div>
+
+        <div class="border-2 rounded-lg hover:shadow-lg transition-shadow p-6">
+          <div class="text-center mb-6">
+            <div class="image-overlay mb-4">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                   alt="Fingerprinting process and FBI forms" 
+                   class="w-full h-48 object-cover notary-image">
+            </div>
+            <i class="fas fa-fingerprint text-green-600 text-3xl mb-4"></i>
+            <h3 class="text-2xl font-bold">Fingerprinting Services</h3>
+            <p class="text-gray-500 text-lg">Professional Fingerprinting Services</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-green-600 mb-4">$75.00</div>
+            <p class="text-gray-600 mb-4">1 hour service • FBI FD-258 Cards</p>
+            <a href="#contact" class="block w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md font-medium">
+              BOOK NOW
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 p-6 rounded-lg text-center">
+        <h3 class="text-2xl font-bold text-blue-900 mb-2">Mobile Service Rate</h3>
+        <p class="text-xl text-blue-700">$75.00 anywhere in Genesee County</p>
+        <p class="text-sm text-gray-600 mt-2">
+          Additional fees for waiting time beyond 10 minutes may apply if documents and/or persons are not ready
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">About Our Service</h2>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Convenient Mobile Notary Services</h3>
+          <p class="text-gray-700 mb-6">
+            Genesee County Mobile Notary makes the process of notarizing your documents easy and convenient. Our
+            Mobile Notaries travel to the location of your choice in order to fulfill notarial duties. These
+            typically entail witnessing the signing of sensitive documents, identifying participants, and
+            administering oaths when necessary.
+          </p>
+          <p class="text-gray-700 mb-6">
+            Appointments can be arranged at a residence, office, hotel, airport, nursing home, hospital, restaurant,
+            film set, coffee shop, or any other location you request.
+          </p>
+          <div class="flex items-center gap-2 text-blue-600">
+            <i class="fas fa-check-circle"></i>
+            <span class="font-semibold">Experienced & Certified Notaries</span>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="image-overlay">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                 alt="Professional notary with client" 
+                 class="w-full h-64 object-cover notary-image">
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h4 class="text-xl font-bold mb-4">We Meet You Anywhere:</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-center gap-2">
+                <i class="fas fa-map-pin text-blue-600"></i>
+                Residences & Offices
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-map-pin text-blue-600"></i>
+                Hotels & Airports
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-map-pin text-blue-600"></i>
+                Nursing Homes & Hospitals
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-map-pin text-blue-600"></i>
+                Restaurants & Coffee Shops
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-map-pin text-blue-600"></i>
+                Any Location You Request
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documents We Notarize -->
+  <section id="documents" class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-6">Documents We Notarize</h2>
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="image-overlay">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                 alt="Power of Attorney document" 
+                 class="w-full h-48 object-cover notary-image">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold">Power of Attorney</p>
+            </div>
+          </div>
+          <div class="image-overlay">
+            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                 alt="Legal contracts and agreements" 
+                 class="w-full h-48 object-cover notary-image">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold">Legal Contracts</p>
+            </div>
+          </div>
+          <div class="image-overlay">
+            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                 alt="Real estate documents and deeds" 
+                 class="w-full h-48 object-cover notary-image">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold">Real Estate Documents</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Affidavits</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Power Of Attorneys</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Buy & Sell Agreements</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Child Support Documents</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Commercial Leases</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Mortgages and Deeds</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Guardianship & Custody Documents</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Living Trusts</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Partnership Agreements</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Pre-Nuptials & Divorce Documents</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">I-9 Forms</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Authorization for Minor Travel</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Passport Forms</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Safe Deposit Box Openings</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">Wedding & Marriage Ceremonies</span>
+        </div>
+        <div class="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+          <i class="fas fa-check-circle text-blue-600"></i>
+          <span class="text-gray-700">And much more!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fingerprinting Details -->
+  <section id="fingerprinting" class="py-16 px-4 bg-green-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Fingerprinting Services</h2>
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <div class="image-overlay mb-6">
+            <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                 alt="FBI fingerprint card FD-258" 
+                 class="w-full h-64 object-cover notary-image">
+          </div>
+          <h3 class="text-2xl font-bold mb-6">Mobile Fingerprinting Solutions</h3>
+          <p class="text-gray-700 mb-6">
+            Genesee County Mobile Notary provides Mobile Fingerprinting solutions for individuals, small businesses,
+            and large corporations. Our Fingerprint Technicians travel to your location equipped with everything
+            needed to take your fingerprints.
+          </p>
+          <p class="text-gray-700 mb-6">
+            We specialize in traditional Ink and Roll fingerprinting (not digital) and have a super-low rejection
+            rate.
+          </p>
+        </div>
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h4 class="text-xl font-bold mb-4">Pricing:</h4>
+            <ul class="space-y-2">
+              <li class="flex justify-between">
+                <span>First FBI FD-258 Card:</span>
+                <span class="font-bold text-green-600">$75.00</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Each Additional Card:</span>
+                <span class="font-bold text-green-600">$25.00</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h4 class="text-xl font-bold mb-4">Service Features:</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                <span>Traditional Ink and Roll fingerprinting</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                <span>Super-low rejection rate</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                <span>Mobile service to your location</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                <span>FBI FD-258 Cards provided</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                <span>Professional technicians</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Requirements Section -->
+  <section id="requirements" class="py-16 px-4 bg-yellow-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Important Requirements</h2>
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="image-overlay">
+          <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+               alt="Valid ID requirements for notarization" 
+               class="w-full h-48 object-cover notary-image">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+            <p class="text-white font-semibold">Valid ID Required</p>
+          </div>
+        </div>
+        
+        <div class="border rounded-lg p-6 bg-white shadow-card">
+          <div class="mb-4">
+            <h3 class="text-xl font-bold flex items-center gap-2">
+              <i class="fas fa-users text-yellow-600"></i>
+              For Notarization Services
+            </h3>
+          </div>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-yellow-600 mt-1"></i>
+              <span>All signers must be present at time of notarization</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-yellow-600 mt-1"></i>
+              <span>Valid photo ID required (not expired)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-yellow-600 mt-1"></i>
+              <span>Complete documents must be present</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-yellow-600 mt-1"></i>
+              <span>Signers must be competent and alert</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-yellow-600 mt-1"></i>
+              <span>Must be able to explain document in English</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="border rounded-lg p-6 bg-white shadow-card">
+          <div class="mb-4">
+            <h3 class="text-xl font-bold flex items-center gap-2">
+              <i class="fas fa-file-alt text-blue-600"></i>
+              Accepted ID Types
+            </h3>
+          </div>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center gap-2">
+              <i class="fas fa-check-circle text-blue-600"></i>
+              State-issued driver's license
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fas fa-check-circle text-blue-600"></i>
+              State-issued identification card
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fas fa-check-circle text-blue-600"></i>
+              U.S. military identification card
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fas fa-check-circle text-blue-600"></i>
+              Resident alien ID card (green card)
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fas fa-check-circle text-blue-600"></i>
+              U.S. Passport
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why-us" class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12">Why Choose Us?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-users text-blue-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Experienced Agents</h3>
+          <p class="text-gray-600">
+            We have experienced notary agents that ensure documents fully comply with jurisdiction laws.
+          </p>
+        </div>
+        <div class="p-6">
+          <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-clock text-green-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Fast & Convenient</h3>
+          <p class="text-gray-600">
+            Same-day, last minute, and emergency requests available through our rapid response package.
+          </p>
+        </div>
+        <div class="p-6">
+          <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-check-circle text-purple-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Thorough Review</h3>
+          <p class="text-gray-600">
+            We check all details and advise clients on next steps in cases of discrepancies.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-4 bg-blue-900 text-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Book an Appointment Today</h3>
+          <p class="mb-8">
+            We love our customers, so feel free to contact us during normal business hours. All appointments must be
+            paid in full before a notary is assigned.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-phone text-blue-300 text-xl"></i>
+              <div>
+                <p class="font-semibold">Phone</p>
+                <a href="tel:810-255-1634" class="text-blue-200 hover:text-white">
+                  (810) 255-1634
+                </a>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-envelope text-blue-300 text-xl"></i>
+              <div>
+                <p class="font-semibold">Email</p>
+                <a href="mailto:Info@gcmns1.com" class="text-blue-200 hover:text-white">
+                  Info@gcmns1.com
+                </a>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-map-marker-alt text-blue-300 text-xl"></i>
+              <div>
+                <p class="font-semibold">Service Area</p>
+                <p class="text-blue-200">Genesee County & Surrounding Cities</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8 p-4 bg-blue-800 rounded-lg">
+            <h4 class="font-bold mb-2">Quick Contact Options:</h4>
+            <div class="space-y-2">
+              <a href="tel:810-255-1634" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded-md font-medium">
+                Call (810) 255-1634 to Book
+              </a>
+              <a href="mailto:Info@gcmns1.com" class="block w-full border border-blue-400 text-white hover:bg-blue-700 text-center py-2 rounded-md font-medium">
+                Send Email Inquiry
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="bg-white p-6 rounded-lg">
+          <h4 class="text-xl font-bold text-gray-900 mb-4">Schedule Your Appointment</h4>
+          <p class="text-gray-600 mb-6">
+            Fill out the form below and we'll get back to you within 24 hours to confirm your appointment.
+          </p>
+          
+          <!-- Netlify Form -->
+          <form name="appointment-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-4">
+            <!-- Hidden field for Netlify -->
+            <input type="hidden" name="form-name" value="appointment-request" />
+            
+            <!-- Honeypot field for spam protection -->
+            <div style="display: none;">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </div>
+            
+            <!-- Form Fields -->
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
+                <input type="text" id="first-name" name="first-name" required 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900">
+              </div>
+              <div>
+                <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
+                <input type="text" id="last-name" name="last-name" required 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900">
+              </div>
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+              <input type="email" id="email" name="email" required 
+                     class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900">
+            </div>
+            
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required 
+                     class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900">
+            </div>
+            
+            <div>
+              <label for="service-type" class="block text-sm font-medium text-gray-700 mb-1">Service Needed *</label>
+              <select id="service-type" name="service-type" required 
+                      class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900">
+                <option value="">Select a service</option>
+                <option value="mobile-notary">Mobile Notary Service ($75)</option>
+                <option value="fingerprinting">Fingerprinting Service ($75)</option>
+                <option value="both">Both Services</option>
+                <option value="other">Other (please specify in message)</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="preferred-date" class="block text-sm font-medium text-gray-700 mb-1">Preferred Date</label>
+              <input type="date" id="preferred-date" name="preferred-date" 
+                     class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900">
+            </div>
+            
+            <div>
+              <label for="preferred-time" class="block text-sm font-medium text-gray-700 mb-1">Preferred Time</label>
+              <select id="preferred-time" name="preferred-time" 
+                      class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900">
+                <option value="">Select preferred time</option>
+                <option value="morning">Morning (8 AM - 12 PM)</option>
+                <option value="afternoon">Afternoon (12 PM - 5 PM)</option>
+                <option value="evening">Evening (5 PM - 8 PM)</option>
+                <option value="flexible">Flexible</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Service Location *</label>
+              <input type="text" id="location" name="location" required 
+                     placeholder="Address or general area (e.g., Downtown Flint, Home, Office)"
+                     class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900">
+            </div>
+            
+            <div>
+              <label for="document-type" class="block text-sm font-medium text-gray-700 mb-1">Document Type (if applicable)</label>
+              <input type="text" id="document-type" name="document-type" 
+                     placeholder="e.g., Power of Attorney, Affidavit, Real Estate Documents"
+                     class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900">
+            </div>
+            
+            <div>
+              <label for="urgency" class="block text-sm font-medium text-gray-700 mb-1">Urgency Level</label>
+              <select id="urgency" name="urgency" 
+                      class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900">
+                <option value="standard">Standard (24+ hours notice)</option>
+                <option value="same-day">Same Day Service</option>
+                <option value="emergency">Emergency (ASAP)</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Additional Details</label>
+              <textarea id="message" name="message" rows="4" 
+                        placeholder="Please provide any additional information about your notarization needs, number of signers, special requirements, etc."
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900"></textarea>
+            </div>
+            
+            <div class="bg-gray-50 p-4 rounded-md">
+              <h5 class="font-semibold text-gray-900 mb-2">Important Reminders:</h5>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• All signers must be present with valid photo ID</li>
+                <li>• Documents must be complete and ready to sign</li>
+                <li>• Payment is required before service ($75 base rate)</li>
+                <li>• We recommend scheduling 24 hours in advance</li>
+              </ul>
+            </div>
+            
+            <button type="submit" 
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-md transition-colors duration-200">
+              Submit Appointment Request
+            </button>
+          </form>
+          
+          <p class="text-xs text-gray-500 mt-4 text-center">
+            By submitting this form, you agree to be contacted regarding your appointment request.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo-Bm0CnMUkJghxxA8iuMGrWXPWAOSuPw.webp" alt="Genesee County Mobile Notary Logo" class="w-12 h-12 object-contain">
+            <h3 class="text-xl font-bold">Genesee County Mobile Notary</h3>
+          </div>
+          <p class="text-gray-300">
+            Professional mobile notary and fingerprinting services serving Genesee County and surrounding areas.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Services</h4>
+          <ul class="space-y-2 text-gray-300">
+            <li>Mobile Notary Services</li>
+            <li>Fingerprinting Services</li>
+            <li>Document Witnessing</li>
+            <li>Emergency Notarizations</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Contact</h4>
+          <div class="space-y-2 text-gray-300">
+            <p>Phone: (810) 255-1634</p>
+            <p>Email: Info@gcmns1.com</p>
+            <p>Service Area: Genesee County</p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+        <p>Copyright © 2021 geneseecountymobilenotaryservices.com - All Rights Reserved.</p>
+        <p class="mt-2">Powered by Champtron Systems LLC</p>
+        <div class="mt-4 space-x-4">
+          <a href="#" class="hover:text-white">Privacy Policy</a>
+          <span>•</span>
+          <a href="#" class="hover:text-white">Terms and Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Form submission handling
+      const form = document.querySelector('form[name="appointment-request"]');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          const submitButton = form.querySelector('button[type="submit"]');
+          submitButton.textContent = 'Submitting...';
+          submitButton.disabled = true;
+          
+          setTimeout(() => {
+            submitButton.textContent = 'Submit Appointment Request';
+            submitButton.disabled = false;
+          }, 3000);
+        });
+      }
+      
+      // Set minimum date to today
+      const dateInput = document.getElementById('preferred-date');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+      }
+    });
+  </script>
 </body>
 </html>
